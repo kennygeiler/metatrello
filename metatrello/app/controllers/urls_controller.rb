@@ -7,7 +7,7 @@ class UrlsController < ApplicationController
   def create
     @url = Url.create(url_params)
     if @url.save
-      redirect_to @url
+      redirect_to new_url_note_path(@url)
     else
       render "new"
     end
